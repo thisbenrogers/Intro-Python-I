@@ -51,6 +51,7 @@ waypoints.append(new_dict)
 # YOUR CODE HERE
 for d in waypoints:
     d.update((k, "not a real place") for k, v in d.items() if v == "a place")
+    d.update((k, -130) for k, v in d.items() if v == -121)
 # Write a loop that prints out all the field values for all the waypoints
 # YOUR CODE HERE
 for d in waypoints:
