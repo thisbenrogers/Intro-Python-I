@@ -38,10 +38,7 @@ print(sum(a))    # Should print 22
 
 # YOUR CODE HERE
 def f3(a, b=None):
-    if b is None:
-        return a + 1
-    else:
-        return a + b
+    return a + 1 if b is None else a + b
 
 print(f3(1, 2))  # Should print 3
 print(f3(8))     # Should print 9
