@@ -33,16 +33,17 @@ from datetime import datetime
 
 today = datetime.today()
 
-cal = calendar.Calendar()
+# reformat using calendar.TextCalendar
+cal = calendar.TextCalendar()
 
 length = len(sys.argv)
 arguments = sys.argv
 
 if length == 1:
-    print(cal.monthdatescalendar(today.year, today.month)) # print calendar for this month
+    cal.prmonth(today.year, today.month) # print calendar for this month
 elif length == 2:
-    print(cal.monthdatescalendar(today.year, int(arguments[1]))) # assume arg is month and print that month's calendar for this year
+    cal.prmonth(today.year, int(arguments[1])) # assume arg is month and print that month's calendar for this year
 elif length == 3:
-    print(cal.monthdatescalendar(int(arguments[2]), int(arguments[1]))) # print the requested calendar
+    cal.prmonth(int(arguments[2]), int(arguments[1])) # print the requested calendar
 else:
     print("This program requires two or fewer arguments, the first argument should be the month value and the second should be the year value for the calendar you wish to view")
