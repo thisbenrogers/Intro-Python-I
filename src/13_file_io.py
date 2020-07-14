@@ -10,7 +10,11 @@ https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files
 # Note: pay close attention to your current directory when trying to open "foo.txt"
 
 # YOUR CODE HERE
-with open('foo.txt') as f1:
+from pathlib import Path
+
+PARENT_DIR = Path(__file__).resolve().parent
+
+with open(PARENT_DIR/'foo.txt') as f1:
     read_file1 = f1.read()
     print(read_file1)
 
